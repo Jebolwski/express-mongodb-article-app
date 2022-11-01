@@ -1,0 +1,26 @@
+{
+  "scripts": {
+    "devStart": "nodemon server.js",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "@hapi/joi": "^17.1.1",
+    "bcrypt": "^5.1.0",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.1",
+    "dotenv": "^16.0.3",
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "expressjs": "^1.0.1",
+    "joi": "^17.7.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.6.5",
+    "nodemon": "^2.0.20"
+  },
+  "name": "mongodb-test",
+  "version": "1.0.0",
+  "description": "Mongodb with node.js",
+  "main": "server.js",
+  "author": "Mert Gökmen",
+  "license": "ISC"
+}
