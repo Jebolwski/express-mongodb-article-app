@@ -8,7 +8,17 @@ const User = require("../models/user");
 const mongoose = require("mongoose");
 const multer = require("multer");
 const { articleValidation } = require("../validation");
-const upload = multer({ dest: "uploads/article/" });
+
+var storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, "uploads/article");
+  },
+  filename: function (req, file, cb) {
+    cb(null, Date.now() + ".jpg"); //Appending .jpg
+  },
+});
+
+var upload = multer({ storage: storage });
 
 router.get("/", async (req, res) => {
   let articles = await Article.find();
