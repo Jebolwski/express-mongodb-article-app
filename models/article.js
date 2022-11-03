@@ -4,10 +4,15 @@ const articleSchema = new mongoose.Schema({
   name: {
     type: String,
     required: [true, "You have to enter name 😒"],
+    max: [60, "Max length is 60 characters long 😥"],
   },
   desc: {
     type: String,
     required: [true, "You have to enter description 😢"],
+    max: [180, "Max length is 180 characters long 😥"],
+  },
+  file: {
+    type: Object,
   },
   user: {
     type: Object,
