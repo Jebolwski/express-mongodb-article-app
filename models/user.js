@@ -46,10 +46,7 @@ userSchema.pre("save", async function (next) {
   if (!this.isModified("password")) {
     next();
   }
-  console.log("CAME AND SAW");
-  console.log(this.password);
   this.password = bcrypt.hash(this.password, 10);
-  console.log(this.password);
 });
 
 userSchema.methods.comparePassword = async function (yourPassword) {

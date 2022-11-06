@@ -10,14 +10,8 @@ const dotenv = require("dotenv");
 dotenv.config();
 
 mongoose
-  .connect(process.env.MONGO_PUBLIC_URL, () => {
-    console.log("connected to Mongo");
-  })
-  .then(
-    app.listen(5000, () => {
-      console.log("listening on port 5000");
-    })
-  )
+  .connect(process.env.MONGO_PUBLIC_URL, () => {})
+  .then(app.listen(5000, () => {}))
   .catch((err) => {
     console.log(err);
   });
