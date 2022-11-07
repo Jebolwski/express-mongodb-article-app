@@ -12,11 +12,6 @@ dotenv.config();
 
 router.post("/sign-in", async (req, res, next) => {
   try {
-    const { error } = loginValidation(req.body);
-    if (error) {
-      res.status(400).json({ msg: error.details[0].message });
-      next();
-    }
     const { email, password } = req.body;
     if (!email || !password) {
       res.status(400).json({ msg: "Both email and password are required 😢" });

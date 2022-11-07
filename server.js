@@ -1,5 +1,6 @@
 const express = require("express");
 const articles = require("./routes/articles");
+const news = require("./routes/news");
 const app = express();
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
@@ -19,6 +20,7 @@ mongoose
 app.use(express.urlencoded({ extended: false }));
 
 app.use("/articles", articles);
+app.use("/news", news);
 app.use("/", users);
 
 app.get("/", (req, res) => {
