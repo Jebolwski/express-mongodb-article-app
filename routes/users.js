@@ -35,6 +35,7 @@ router.post("/sign-in", async (req, res, next) => {
           avatar: user.profilePicture,
           id: user._id,
           email: user.email,
+          role: user.role,
         },
         process.env.JWT_SECRET
       );
